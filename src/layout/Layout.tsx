@@ -1,4 +1,3 @@
-// src/layout/Layout.tsx
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import Header from "./Header";
@@ -11,7 +10,7 @@ const Layout = () => {
   const getPageTitle = () => {
     switch (location.pathname) {
       case "/":
-        return "Home";
+        return "Voyage";
       case "/blogs":
         return "Blogs";
       case "/account":
@@ -29,8 +28,6 @@ const Layout = () => {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "var(--bg)",
-        color: "var(--text)",
       }}
     >
       <Header
@@ -45,8 +42,6 @@ const Layout = () => {
           flex: 1,
           p: 2,
           pb: "90px",
-          backgroundColor: "var(--bg)",
-          color: "var(--text)",
         }}
       >
         <Outlet />

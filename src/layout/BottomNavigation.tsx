@@ -1,4 +1,3 @@
-// src/layout/BottomNavigationBar.tsx
 import React from "react";
 import { Home, FileText, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -18,9 +17,6 @@ const BottomNavigationBar = () => {
         left: 0,
         right: 0,
         zIndex: 1000,
-        backgroundColor: "var(--bg)",
-        borderTop: "1px solid var(--border)",
-        boxShadow: "var(--shadow)",
       }}
     >
       <BottomNavigation
@@ -30,16 +26,10 @@ const BottomNavigationBar = () => {
         }}
         showLabels
         sx={{
-          backgroundColor: "var(--bg)",
           height: 68,
 
           "& .MuiBottomNavigationAction-root": {
-            color: "var(--text)",
             minWidth: "unset",
-          },
-
-          "& .Mui-selected": {
-            color: "var(--accent)",
           },
 
           "& .MuiBottomNavigationAction-label": {
@@ -50,7 +40,7 @@ const BottomNavigationBar = () => {
         }}
       >
         <BottomNavigationAction
-          label="Home"
+          label="Voyage"
           value="/"
           icon={<Home size={20} />}
         />

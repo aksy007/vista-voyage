@@ -1,0 +1,55 @@
+import React, { useState } from "react";
+import { InputAdornment, Stack, TextField } from "@mui/material";
+import { SearchIcon } from "lucide-react";
+import Filters from "../../components/Filter/Filters.tsx";
+
+// TODO:
+// Autocomplete Component along with filtering for voyage type
+// MapBox GL JS for map rendering
+// Story cards for each voyage with details and images
+
+const Voyage = () => {
+  const [searchLocation, setSearchLocation] = useState("");
+  return (
+    <>
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{ justifyContent: "space-between" }}
+      >
+        <TextField
+          id="search_location"
+          type="search"
+          label="Search Location"
+          value={searchLocation}
+          onChange={(e) => setSearchLocation(e.target.value)}
+          slotProps={{
+            input: {
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchIcon size={16} />
+                </InputAdornment>
+              ),
+            },
+          }}
+          sx={{
+            flex: 1,
+            "& .MuiInputBase-input": { padding: "8px 16px" },
+            "& .MuiInputLabel-root": {
+              left: "16px",
+              top: "50%",
+              transform: "translateY(-50%)",
+            },
+            "& .MuiInputLabel-shrink": {
+              top: 0,
+              transform: "translateY(-50%) scale(0.75)",
+            },
+          }}
+        />
+        <Filters />
+      </Stack>
+    </>
+  );
+};
+
+export default Voyage;
