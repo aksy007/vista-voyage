@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAppState } from "../../state";
+import { useAppState } from "../state";
 import {
   Checkbox,
   FormControlLabel,
@@ -11,7 +11,7 @@ import {
   Button,
 } from "@mui/material";
 import { ListFilterPlus, X } from "lucide-react";
-import { FilterOptions, type filter } from "../../utils/atom";
+import { FilterOptions, type filter } from "../utils/atom";
 
 const Filters = () => {
   const state = useAppState();

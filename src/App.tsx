@@ -11,7 +11,6 @@ function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const muiTheme = theme(prefersDarkMode ? "dark" : "light");
 
-  console.log("Current theme mode:", prefersDarkMode ? "dark" : "light");
   return (
     <ThemeProvider theme={muiTheme}>
       <CssBaseline />
