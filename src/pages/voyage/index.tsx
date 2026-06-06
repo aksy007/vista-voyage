@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { InputAdornment, Stack, TextField } from "@mui/material";
+import { Button, InputAdornment, Stack, TextField } from "@mui/material";
 import { SearchIcon } from "lucide-react";
 import Filters from "../../components/Filters.tsx";
 import { GetStoryCards, type StoryCardType } from "../../data/PostCard.ts";
 import StoryCard from "../../components/StoryCard.tsx";
+import { useNavigate } from "react-router-dom";
 
 // TODO:
 // Autocomplete Component along with filtering for voyage type
@@ -56,7 +57,7 @@ const VoyageHeader = ({
 const Voyage = () => {
   const [searchLocation, setSearchLocation] = useState<string>("");
   const [storyCards, setStoryCards] = useState<StoryCardType[]>([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     GetStoryCards().then((data) => setStoryCards(data as StoryCardType[]));
   }, []);
@@ -67,6 +68,14 @@ const Voyage = () => {
         searchLocation={searchLocation}
         setSearchLocation={setSearchLocation}
       />
+
+      <Button
+        variant="outlined"
+        sx={{ mt: 2 }}
+        onClick={() => navigate("/new-story")}
+      >
+        Add your story
+      </Button>
 
       {storyCards?.length
         ? storyCards.map((card) => (

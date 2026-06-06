@@ -13,3 +13,22 @@ export const useAppState = create<AppState & Actions>((set) => ({
   filter: null,
   setFilter: (filter) => set({ filter }),
 }));
+
+type StoryState = {
+  title: string;
+  description?: string;
+  address: string;
+  mediaFiles?: File[];
+};
+
+type StoryAction = {
+  setStory: (story: StoryState) => void;
+};
+
+export const useStoryState = create<StoryState & StoryAction>((set) => ({
+  title: "",
+  description: "",
+  address: "",
+  mediaFiles: [],
+  setStory: (story) => set(() => ({ ...story })),
+}));

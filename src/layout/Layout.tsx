@@ -10,11 +10,13 @@ const Layout = () => {
   const getPageTitle = () => {
     switch (location.pathname) {
       case "/":
-        return "Voyage";
+        return "Travel Stories";
       case "/blogs":
         return "Blogs";
       case "/account":
         return "Account";
+      case "/new-story":
+        return "New Story";
       default:
         return "Page";
     }
